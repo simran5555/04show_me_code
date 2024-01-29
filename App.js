@@ -20,12 +20,23 @@ const Header = () => {
     )
 }
 
-const Body = () =>{
+const RestaurantCard = (props) => {
+    const resData = props
+    return (
+        <div className="res-card">
+            
+        </div>
+    )
+}
+
+const resObj = {}
+
+const Body = (resObj) =>{
     return (
         <div className="body">
             <div className="search">SEARCH</div>
             <div className="restaurant-container">
-                <RestaurantCard />
+                <RestaurantCard resData={resObj}/>
             </div>
         </div>
     )
