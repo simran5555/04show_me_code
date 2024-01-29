@@ -1,0 +1,34 @@
+{
+  "name": "show_me_code",
+  "version": "1.0.0",
+  "description": "learning react from namaste react",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simran5555/04show_me_code.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Simran Kaur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simran5555/04show_me_code/issues"
+  },
+  "homepage": "https://github.com/simran5555/04show_me_code#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
