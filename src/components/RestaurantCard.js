@@ -1,3 +1,5 @@
+import CDN_URL from "../utils/constants";
+
 const RestaurantCard = (props) => {
     const {resData} = props;
     const {
@@ -12,7 +14,8 @@ const RestaurantCard = (props) => {
         <div className="res-card" style={{
             backgroundColor: '#f0f0f0',
         }}>
-            <img src={'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/' + cloudinaryImageId} style={{width:'190px'}} alt="" />
+            {console.log(CDN_URL + cloudinaryImageId)}
+            <img src={CDN_URL + cloudinaryImageId} style={{width:'190px'}} alt="" />
             <h3>{name}</h3>
             <h4>{cuisines.join(', ')}</h4>
             <h4>{avgRating} stars</h4>

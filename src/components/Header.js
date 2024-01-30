@@ -1,10 +1,12 @@
+import {LOGO_URL} from "../utils/constants"
+
 const Header = () => {
     return (
         <div className="header">
             <div className="logo-container">
                 <img 
                 className='logo' 
-                src="https://www.logodesign.net/logo-new/heart-shaped-prawn-merged-with-two-hands-holding-8398ld.png?nwm=1&nws=1&industry=food" 
+                src={LOGO_URL}
                 alt=""/>
             </div>
             <div className="nav-items">

@@ -37,3 +37,29 @@ or
 
 # never use index as key - ALWAYS USE UNIQUE KEY
 - it works but hinders optimization as it messes up the positioning system of react and leads to the rerendering of all the items
+
+# never keep hardcoded strings or objects/arrays in the components
+- make a seperate utils or public or common folder
+- utils - constants.js //to keep all the constants like CDN_URL, LOGO_URL
+- utils - mockData.js for the resList
+
+# exporting and importing of multiple items from a single file
+- export const CDN_URL 
+- export const LOGO_URL
+OR 
+- export {CDN_URL, LOGO_URL}
+- import {CDN_URL} from filesrc
+
+you can also do both default and named exports from a single file
+
+# named imports
+- {} are used 
+- the variable is used inside { } because it is js thing
+
+# types of export and imports
+- default
+--- export default Component
+--- import Component from "path"
+- named
+--- export const Component
+--- import {Component} from "path
