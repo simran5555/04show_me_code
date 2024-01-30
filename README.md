@@ -63,3 +63,7 @@ you can also do both default and named exports from a single file
 - named
 --- export const Component
 --- import {Component} from "path
+
+# using hooks
+- import {useState} from "react"
+- const [list, setList] = useState(resList)

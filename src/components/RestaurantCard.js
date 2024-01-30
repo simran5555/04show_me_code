@@ -14,7 +14,6 @@ const RestaurantCard = (props) => {
         <div className="res-card" style={{
             backgroundColor: '#f0f0f0',
         }}>
-            {console.log(CDN_URL + cloudinaryImageId)}
             <img src={CDN_URL + cloudinaryImageId} style={{width:'190px'}} alt="" />
             <h3>{name}</h3>
             <h4>{cuisines.join(', ')}</h4>
