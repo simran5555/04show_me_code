@@ -1,52 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img 
-                className='logo' 
-                src="https://www.logodesign.net/logo-new/heart-shaped-prawn-merged-with-two-hands-holding-8398ld.png?nwm=1&nws=1&industry=food" 
-                alt=""/>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-
-    )
-}
-
-const RestaurantCard = (props) => {
-    const {resData} = props;
-    const {
-        cloudinaryImageId,
-        name,
-        cuisines,
-        avgRating,
-        costForTwo,
-        deliveryTime,
-    } = resData?.data;
-    return (
-        <div className="res-card" style={{
-            backgroundColor: '#f0f0f0',
-        }}>
-            <img src={'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/' + cloudinaryImageId} style={{width:'190px'}} alt="" />
-            <h3>{name}</h3>
-            <h4>{cuisines.join(', ')}</h4>
-            <h4>{avgRating} stars</h4>
-            <h4>₹{costForTwo / 100} FOR TWO</h4>
-            <h4>{deliveryTime} minutes</h4>
-        </div>
-    )
-}
-
+import RestaurantCard from "./RestaurantCard";
 
 const resList = [
     {
@@ -2092,7 +2044,7 @@ const resList = [
     },
 ];
 
-const Body = (resObj) => {
+const Body = () => {
     return (
         <div className="body">
             <div className="search-container">
@@ -2108,28 +2060,4 @@ const Body = (resObj) => {
     )
 }
 
-const currYear = new Date().getFullYear();
-
-const Footer = () => {
-  return (
-    <footer className="footer">
-      <p>
-        Copyright &copy; {currYear}, Made with 💗 by <strong>Simran</strong>
-      </p>
-    </footer>
-  );
-};
-
-
-const App = () => {
-    return (
-        <div className='app'>
-            <Header />
-            <Body />
-            <Footer />
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />)
+export default Body
