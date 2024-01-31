@@ -12,7 +12,7 @@
 - body
 --- search-bar
 --- res-container
------ res-cards
+------ res-cards
 -footer
 --- made by (there can be more)
 
@@ -78,6 +78,8 @@ import {Component} from "path
 - virtual dom is representation of the actual DOM (IT IS AN OBJECT - THE REACT ELEMENT)
 - it makes virtual DOM at every state and when there is any difference in the old and new DOM, it rerenders the component
 
+## incremental rendering
+
 ## reconciliation
 - The algorithm React uses to diff one tree with another to determine which parts need to be changed.
 - The new tree is diffed with the previous tree to compute which operations are needed to update the rendered app.
@@ -91,3 +93,12 @@ import {Component} from "path
 To flush a fiber is to render its output onto the screen.
 - work-in-progress
 A fiber that has not yet completed; conceptually, a stack frame which has not yet returned.
+- the output of a fiber is the return value of a function.
+- output is created only at the leaf nodes by host components. The output is then transferred up the tree.
+
+# episode 6
+- useEffect(()=>{
+        console.log("useEffect")
+    },[])
+    console.log("rendered")
+// component is rendered before calling useEffect
