@@ -102,3 +102,20 @@ A fiber that has not yet completed; conceptually, a stack frame which has not ye
     },[])
     console.log("rendered")
 // component is rendered before calling useEffect
+
+# episode 7
+
+## react routing
+- import {createBrowserRouter, RouterProvider} from "react-router-dom"
+- createBrowserRouter is a function that takes an array of path and element objects
+- const AppRouter = createBroswerRouter([
+    {
+        path: "/",
+        element: <App />
+    },
+    {
+        path: "/about",
+        element: <About />
+    } //and so on
+])
+- root.render(<RouterProvider router={App} />)
