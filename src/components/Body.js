@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { Shimmer } from "./Shimmer"; 
 import { swiggy_api_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
@@ -29,9 +30,9 @@ const Body = () => {
   async function getRestaurants() {
     // handle the error using try... catch
     try {
-      const response = await fetch(swiggy_api_URL);
+      const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING");
       const json = await response.json();
-
+      console.log(json)
       // initialize checkJsonData() function to check Swiggy Restaurant data
       async function checkJsonData(jsonData) {
         for (let i = 0; i < jsonData?.data?.cards.length; i++) {
@@ -106,7 +107,7 @@ const Body = () => {
           {/* We are mapping restaurants array and passing JSON array data to RestaurantCard component as props with unique key as restaurant.data.id */}
           {filteredRestaurants.map((restaurant) => {
             return (
-              <RestaurantCard key={restaurant?.info?.id} {...restaurant?.info} />
+              <Link key={restaurant?.info?.id} to={"/restaurants/"+restaurant?.info?.id}> <RestaurantCard {...restaurant?.info} /></Link>
             );
           })}
         </div>
