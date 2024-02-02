@@ -267,3 +267,9 @@
   margin-top: 10px;
   border-radius: 5px;
 }
+
+/*user component */
+.user-card{
+  line-height: 25px;
+  padding: 10px 10px;
+}

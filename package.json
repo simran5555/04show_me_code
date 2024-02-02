@@ -22,6 +22,7 @@
   "homepage": "https://github.com/simran5555/04show_me_code#readme",
   "devDependencies": {
     "parcel": "^2.11.0",
+    "path-browserify": "^1.0.1",
     "process": "^0.11.10"
   },
   "dependencies": {

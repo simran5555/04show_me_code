@@ -119,3 +119,10 @@ A fiber that has not yet completed; conceptually, a stack frame which has not ye
     } //and so on
 ])
 - root.render(<RouterProvider router={App} />)
+
+
+# episode 8 
+## class based components
+
+### Why do we need super(props)?
+- So, the simple answer to this question is that this thing basically allows accessing this.props in a Constructor function. In fact, what the super() function does is, calls the constructor of the parent class.
