@@ -1,4 +1,3 @@
-import { name } from "ejs";
 import React from "react";
 
 class UserClass extends React.Component {
@@ -8,22 +7,31 @@ class UserClass extends React.Component {
        this.state = {
         count:0
        }
+       
+       //console.log(this.props.name + "child constructor")
     }
 
-    componentDidMount() {
-        console.log("child component did mount")
+    async componentDidMount() {
+        //console.log(this.props.name + "child component did mount")
+        const data = await fetch("https://api.github.com/users/simran5555")
+        const json = await data.json();
+        console.log(json);
+    }
+
+    componentDidUpdate() {
+      console.log("component updated")
+    }
+
+    componentWillUnmount() {
+      console.log("component unmounted")
     }
 
   render() {
-    console.log("Parent Render")
+    console.log(this.props.name + "Child Render")
+    const {name} = this.props
     return (
       <div className="user-card">
-          <h2><span>{this.state.count}</span>{this.props.name}</h2>
-          <button onClick={() => {
-            this.setState({
-                count : this.state.count +1
-            })
-          }}>click</button>
+          <h2><span>{this.state.count}</span>{name}</h2>
           <h3>location</h3>
           <h3>contact</h3>
           <h4>github link</h4>

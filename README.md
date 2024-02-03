@@ -126,3 +126,34 @@ A fiber that has not yet completed; conceptually, a stack frame which has not ye
 
 ### Why do we need super(props)?
 - So, the simple answer to this question is that this thing basically allows accessing this.props in a Constructor function. In fact, what the super() function does is, calls the constructor of the parent class.
+
+--- userclass state update example
+<button onClick={() => {
+            this.setState({
+                count : this.state.count +1
+            })
+}}>click</button>
+
+## life cycle
+### mounting
+dummy constructor
+dummy render
+dom with dummy
+component mounted
+API call
+state variable updated
+
+### update
+
+render api data
+html loaded with api data
+compnentdidupdate
+
+### unmount
+willunmount cleanup
+some code keeps going on and on even when the parent is unmounted so do a cleanup like 
+cleanInterval(timer) 
+
+return () => {
+    //works after component is unmounted
+}
