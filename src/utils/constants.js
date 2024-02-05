@@ -18,6 +18,10 @@ export const MENU_ITEM_TYPE_KEY = "type.googleapis.com/swiggy.presentation.food.
   
 export const RESTAURANT_TYPE_KEY = "type.googleapis.com/swiggy.presentation.food.v2.Restaurant";
 
+export const SWIGGY_RES_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING"
+
+export const SWIGGY_MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6478597&lng=77.0917003&restaurantId="
+
 export const shimmer_card_unit = 20;
 
 export default CDN_URL
