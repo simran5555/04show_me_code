@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { RES_MENU_URL,
-    IMG_CDN_URL,
-    ITEM_IMG_CDN_URL,
-    MENU_ITEM_TYPE_KEY,
-    RESTAURANT_TYPE_KEY, } from '../utils/constants';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // import useParams for read `resId`
+import {
+  SWIGGY_MENU_API,
+  IMG_CDN_URL,
+  ITEM_IMG_CDN_URL,
+  MENU_ITEM_TYPE_KEY,
+  RESTAURANT_TYPE_KEY,
+} from "../utils/constants";
 import {Shimmer} from "./Shimmer";
 
 const RestaurantMenu = () => {
@@ -18,9 +19,9 @@ const RestaurantMenu = () => {
 
   async function getRestaurantInfo() {
     try {
-      const response = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6478597&lng=77.0917003&restaurantId="+resId);
+      const response = await fetch(SWIGGY_MENU_API + resId);
       const json = await response.json();
-      console.log(json)
+
       // Set restaurant data
       const restaurantData = json?.data?.cards?.map(x => x.card)?.
                              find(x => x && x.card['@type'] === RESTAURANT_TYPE_KEY)?.card?.info || null;
@@ -120,6 +121,5 @@ const RestaurantMenu = () => {
     </div>
   );
 };
-
 
 export default RestaurantMenu;

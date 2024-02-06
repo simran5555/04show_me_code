@@ -157,3 +157,10 @@ cleanInterval(timer)
 return () => {
     //works after component is unmounted
 }
+
+## why cant we async in useeffect
+Asynchronous functions, such as those declared with async, implicitly return a Promise.
+Since a Promise is not a valid return type for useEffect, directly using an async function as the effect callback would violate this expectation.
+
+## custom hooks
+- utility functions

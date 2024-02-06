@@ -1,10 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { Shimmer } from "./Shimmer"; 
-import { swiggy_api_URL } from "../utils/constants";
+import { useEffect, useState } from "react"; /* This is named export */
+import { Shimmer } from "./Shimmer"; /* This is default export */
+import { SWIGGY_RES_API } from "../utils/constants";
 import { Link } from "react-router-dom";
-
+ 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
   const resFilterData = restaurants.filter((restaurant) =>
@@ -30,9 +29,9 @@ const Body = () => {
   async function getRestaurants() {
     // handle the error using try... catch
     try {
-      const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING");
+      const response = await fetch(SWIGGY_RES_API);
       const json = await response.json();
-      console.log(json)
+
       // initialize checkJsonData() function to check Swiggy Restaurant data
       async function checkJsonData(jsonData) {
         for (let i = 0; i < jsonData?.data?.cards.length; i++) {
@@ -65,7 +64,7 @@ const Body = () => {
       setFilteredRestaurants(filteredData);
       setErrorMessage("");
       if (filteredData?.length === 0) {
-        setErrorMessage("No matches restaurant found");
+        setErrorMessage(`Sorry, we couldn't find any results for "${searchText}"`);
       }
     } else {
       setErrorMessage("");
@@ -103,11 +102,16 @@ const Body = () => {
       {allRestaurants?.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="res-container">
+        <div className="restaurant-list">
           {/* We are mapping restaurants array and passing JSON array data to RestaurantCard component as props with unique key as restaurant.data.id */}
           {filteredRestaurants.map((restaurant) => {
             return (
-              <Link key={restaurant?.info?.id} to={"/restaurants/"+restaurant?.info?.id}> <RestaurantCard {...restaurant?.info} /></Link>
+              <Link
+                to={"/restaurant/" + restaurant?.info?.id}
+                key={restaurant?.info?.id}
+              >
+                <RestaurantCard {...restaurant?.info} />
+              </Link>
             );
           })}
         </div>
@@ -116,5 +120,4 @@ const Body = () => {
   );
 };
 
-
-export default Body
+export default Body;
