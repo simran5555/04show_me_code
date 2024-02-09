@@ -25,7 +25,9 @@ const Header = () => {
                     <li>
                         <Link to="/contact">Contact Us</Link>
                     </li>
-                    <li>Cart</li>
+                    <li>
+                        <Link to="/cart">Cart</Link>
+                    </li>
                     <button className="loginbtn" type="button" onClick={() => {
                         btnName = "logout"
                         btnNameReact==="login"?setBtnNameReact("logout"):setBtnNameReact("login")

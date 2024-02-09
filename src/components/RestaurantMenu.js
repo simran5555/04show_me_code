@@ -21,7 +21,7 @@ const RestaurantMenu = () => {
     try {
       const response = await fetch(SWIGGY_MENU_API + resId);
       const json = await response.json();
-
+      console.log(json)
       // Set restaurant data
       const restaurantData = json?.data?.cards?.map(x => x.card)?.
                              find(x => x && x.card['@type'] === RESTAURANT_TYPE_KEY)?.card?.info || null;
