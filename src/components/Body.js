@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"; /* This is named export */
 import { Shimmer } from "./Shimmer"; /* This is default export */
 import { SWIGGY_RES_API } from "../utils/constants";
 import { Link } from "react-router-dom";
- 
+  
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
   const resFilterData = restaurants.filter((restaurant) =>
