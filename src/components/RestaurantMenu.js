@@ -8,6 +8,8 @@ import {
   RESTAURANT_TYPE_KEY,
 } from "../utils/constants";
 import {Shimmer} from "./Shimmer";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const RestaurantMenu = () => {
   const { resId } = useParams(); // call useParams and get value of restaurant id using object destructuring
@@ -46,6 +48,13 @@ const RestaurantMenu = () => {
       setRestaurant(null);
       console.log(error);
     }
+  }
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    //dispatch action
+    dispatch( addItem(item))
   }
 
   return !restaurant ? (
@@ -111,7 +120,8 @@ const RestaurantMenu = () => {
                       alt={item?.name}
                     />
                   )}
-                  <button className="add-btn"> ADD +</button>
+                  <button className="add-btn"
+                  onClick={() => handleAddItem(item)}> ADD +</button>
                 </div>
               </div>
             ))}

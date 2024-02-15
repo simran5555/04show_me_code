@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,15 +9,18 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Cart from "./components/Cart";
-import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const App = () => {
   return (
-    <div className="app">        
+    <Provider store={appStore}>
+      <div className="app">
         <Header />
-      <Outlet />  
-      <Footer />
-    </div>
+        <Outlet />
+        <Footer />
+      </div>
+    </Provider>
   );
 };
 
@@ -28,8 +31,8 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />
-      },  
+        element: <Body />,
+      },
       {
         path: "/about",
         element: <About />,
@@ -40,12 +43,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurants/:resId",
-        element: <RestaurantMenu />
+        element: <RestaurantMenu />,
       },
       {
         path: "/cart",
-        element: <Cart />
-      }
+        element: <Cart />,
+      },
     ],
     errorElement: <Error />,
   },

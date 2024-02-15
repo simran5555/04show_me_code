@@ -164,3 +164,12 @@ Since a Promise is not a valid return type for useEffect, directly using an asyn
 
 ## custom hooks
 - utility functions
+
+
+# redux toolkit
+- install react-redux and @reduxjs/toolkit
+- build our own store
+- connect store to app
+- create cart slice
+- dispatch action
+- read data through selector

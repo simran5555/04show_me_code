@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import {LOGO_URL} from "../utils/constants";
 import { Link } from "react-router-dom"
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux"
 
 const Header = () => {
     let btnName = "login"
@@ -10,6 +11,10 @@ const Header = () => {
     const userContext = useContext(UserContext)
     const {loggedInUser} = userContext;
     const [userName, setUserName] = useState(loggedInUser)
+    
+    //selector
+    const cartItems = useSelector((store) => store.cart.items)
+    console.log(cartItems)
     return (
         <div className="header">
             <div className="logo-container">
@@ -30,7 +35,7 @@ const Header = () => {
                         <Link to="/contact">Contact Us</Link>
                     </li>
                     <li>
-                        <Link to="/cart">Cart</Link>
+                        <Link to="/cart">Cart - {cartItems.length} items</Link>
                     </li>
                     <li>
                         <UserContext.Provider value={{loggedInUser:userName}}>
