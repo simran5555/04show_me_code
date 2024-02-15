@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,11 +9,12 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Cart from "./components/Cart";
+import UserContext from "./utils/UserContext";
 
 const App = () => {
   return (
-    <div className="app">
-      <Header />
+    <div className="app">        
+        <Header />
       <Outlet />  
       <Footer />
     </div>

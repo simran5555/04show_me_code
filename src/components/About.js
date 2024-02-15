@@ -22,6 +22,7 @@ class About extends Component {
         <User />
         <UserClass name="Simran"/>
         <UserClass name="Felix"/>
+        
       </div>
     )
   }
