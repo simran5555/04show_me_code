@@ -173,3 +173,16 @@ Since a Promise is not a valid return type for useEffect, directly using an asyn
 - create cart slice
 - dispatch action
 - read data through selector
+
+# testing
+- npm i --save-dev @testing-library/react
+- this is already included in create-react-app
+- since we used parcel we have to introduce this library ourselves
+
+## testing libraries installed :
+- react testing library
+- jest
+- jest dependencies when using babel
+- configure babel
+- in PARCEL docs: Note: JavaScript Babel configs (e.g. babel.config.js) should be avoided. These cause Parcel’s caching to be less effective, which means all of your JS files will be recompiled each time you restart Parcel. To avoid this, use a JSON-based config format instead (e.g. babel.config.json).
+- therefore we add parcelrc file that lets babel work with jest seperately.
