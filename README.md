@@ -186,3 +186,24 @@ Since a Promise is not a valid return type for useEffect, directly using an asyn
 - configure babel
 - in PARCEL docs: Note: JavaScript Babel configs (e.g. babel.config.js) should be avoided. These cause Parcel’s caching to be less effective, which means all of your JS files will be recompiled each time you restart Parcel. To avoid this, use a JSON-based config format instead (e.g. babel.config.json).
 - therefore we add parcelrc file that lets babel work with jest seperately.
+- initialise jest : npx jest --init
+- install jsdom because the jest is v28 above
+- install @babel/preset-react - to make jsx work in react
+- add config for the same
+- install @testing-library/jest-dom
+
+## writing test cases
+- make a folder __tests__
+- file to be named like name.test.js or name.spec.js or name.test.ts
+-test("description", ()=>{
+    testcase: const result= expression..
+    assertion: expect(result).toBe(expectedValue)
+})
+
+
+
+
+
+
+
+

@@ -11,6 +11,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Cart from "./components/Cart";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+// Importing Tailwind CSS in your stylesheets or JS files
+import 'tailwindcss/tailwind.css';
+
 
 const App = () => {
   return (
